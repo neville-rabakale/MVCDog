@@ -1,0 +1,20 @@
+﻿@using MVCDog.Models
+@model Dog
+<html>
+<head>
+    <title>Edit Dog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+    <h1> Edit Dog</h1>
+    <form method="post" action="/edit">
+        <label> Name</label>
+        <input value="@Model.Name" type="text" name="Name" />
+
+        <label> Age</label>
+        <input value="@Model.Age" type="number" name="Age" />
+        <br />
+        <input type="submit" value="Edit" />
+    </form>
+</body>
+</html>
