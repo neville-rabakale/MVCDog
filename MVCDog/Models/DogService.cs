@@ -11,7 +11,7 @@
         {
             if(Dogs.Count != 0)
             {  
-                 dog.Id = Dogs.Max(o => o.Id); 
+                 dog.Id = Dogs.Max(o => o.Id + 1); 
             }
             Dogs.Add(dog); 
         }

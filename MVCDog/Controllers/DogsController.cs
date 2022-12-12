@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.JSInterop.Implementation;
 using MVCDog.Models;
 
 namespace MVCDog.Controllers
@@ -39,11 +40,21 @@ namespace MVCDog.Controllers
             return View(model);
         }
 
-        [HttpPost("edit/{id}")]
+        [HttpPost("edit")]
         public IActionResult Edit(Dog obj)
         {
 
             service.EditDog(obj); 
+
+            return RedirectToAction(nameof(Index));
+        }
+            
+
+        [HttpPost("delete")]
+        public IActionResult Delete(Dog obj)
+        {
+            var dog = service.GetDogById(obj.Id);
+            service.Remove(dog);
 
             return RedirectToAction(nameof(Index));
         }
